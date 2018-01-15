@@ -7,9 +7,9 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Your Name / Site Title"
+title                    : "Luyu Yang's Homepage"
 title_separator          : "-"
-name                     : &name "Your Name"
+name                     : &name "Luyu Yang"
 description              : &description "personal description"
 url                      : http://www.loyo.me # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -84,7 +84,7 @@ author:
   location         : "Location"
   employer         :
   googlescholar    : "http://yourfullgooglescholarurl.com"
-  email            :
+  email            : "luyuyang@gmail.com"
   uri              :
   bitbucket        :
   codepen          :
