@@ -15,6 +15,8 @@ My name is Luyu Yang, people enjoy calling me Loyo.
 <br>
 I am a Computer Vision researcher, a nerd and fan of classical/digitized music.
 <br>
+Check out my new composition with Medly on SoundCloud [Rolling Beans](https://soundcloud.com/luyu-yang-942026816/rollin-beans).
+<br>
 <br>
 Currently I live in Ithaca, New York, employed as a Research Intern at Cornell University under the supervision of the great Professor Kilian Weinberger. My research interests are: Action/Interaction Recognition in videos, Panoramic Stitching and
 Image Quality Assessment.
