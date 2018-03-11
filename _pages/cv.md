@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: "CV"
+title: "curriculum vitae"
 permalink: /cv/
 author_profile: true
 redirect_from:
@@ -10,7 +10,7 @@ redirect_from:
 {% include base_path %}
 
 
-Work experience
+Job experience
 ======
 * Spring 2018: Research Intern
   * Cornell University
