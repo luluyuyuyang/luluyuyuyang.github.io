@@ -20,13 +20,10 @@ Currently I live in Ithaca, New York, employed as a Research Intern at Cornell U
 Image Quality Assessment.
 <br>
 <br>
-<br>
 Coding makes me happy.
 <br>
+A message from you makes me happy as well.
 <br>
-<br>
-<br>
-A message from you as well.
 :)
 <br>
-Please contact me thru email.
+Please contact thru email.
