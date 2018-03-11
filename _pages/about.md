@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "Luyu Yang's Personal Page"
+title: "Hi, I am Luyu Yang. Everyone calls me Loyo!"
 excerpt: "About me"
 author_profile: true
 redirect_from: 
