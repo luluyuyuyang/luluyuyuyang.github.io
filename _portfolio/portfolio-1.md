@@ -6,7 +6,7 @@ A wonderful team of State-of-the-art Panorama Stitching Techniques.
 <br>
 
 <br>
-<img src='/images/KANDAO_logo_EN_resized.jpg'>"
+<img src='/images/KANDAO_logo_EN_resized.jpg' width='442' height='162'>"
 collection: portfolio
 ---
 
