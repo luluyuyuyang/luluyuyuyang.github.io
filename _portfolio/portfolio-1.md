@@ -6,7 +6,8 @@ A wonderful team of State-of-the-art Panorama Stitching Techniques.
 <br>
 Please find out about Kandao at:
 <br>
-www.kandaovr.com<br/>
+www.kandaovr.com
+<br>
 <img src='/images/KANDAO_logo_EN_resized.jpg'>"
 collection: portfolio
 ---
