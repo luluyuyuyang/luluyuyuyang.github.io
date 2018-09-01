@@ -11,18 +11,17 @@ redirect_from:
 About Loyo
 <br>
 <br>
-My name is Luyu Yang, people enjoy calling me Loyo.
+My name is Luyu Yang, many people call me Loyo.
 <br>
-I am a Computer Vision researcher, a nerd and fan of classical/digitized music.
+I am a CVML nerd and fan of classical/digitized music.
 <br>
 Check out my new composition with Medly on SoundCloud [Rolling Beans](https://soundcloud.com/luyu-yang-942026816/rollin-beans).
 <br>
 <br>
-Currently I live in Ithaca, New York, employed as a Research Intern at Cornell University under the supervision of the great [Professor Kilian Weinberger](https://www.cs.cornell.edu/~kilian/). My research interests are: Action/Interaction Recognition in videos, Panoramic Stitching and
-Image Quality Assessment.
+Currently I live in College Park, Maryland, a Ph.D. at University of Maryland under the supervision of the great [Professor Larry Davis](https://www.cs.umd.edu/people/lsdavis). My research interests are: Action/Interaction analysis in videos, Multi-view geometry and Image Forensics.
 <br>
 <br>
-Coding makes me happy.
+Research makes me happy.
 <br>
 A message from you makes me happy as well.
 <br>
