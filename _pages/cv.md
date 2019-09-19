@@ -16,11 +16,6 @@ Job experience
   * Cornell University
   * Machine Learning, Computer Vision
   * Supervisor: Professor Kilian Weinberger
-
-* Fall 2016: Computer Vision Researcher & Developer
-  * Kandao Technology
-  * Panoramic Stitching, Free-viewpoint Rendering, Depth Estimation
-  * Supervisor: Dr. Zhigang Jack Tan
   
 * Fall 2015: Product Manager
   * Tencent Technology
