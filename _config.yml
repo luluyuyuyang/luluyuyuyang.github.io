@@ -10,10 +10,10 @@ locale                   : "en-US"
 title                    : "Luyu Yang's Homepage"
 title_separator          : "-"
 name                     : &name "Luyu Yang"
-description              : &description "Computer Vision Researcher"
+description              : &description "CVML Ph.D."
 url                      : http://www.loyo.me # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "loyo1990/loyo1990.github.io"
+repository               : "https://github.com/luluyuyuyang/luluyuyuyang.github.io"
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
 breadcrumbs              : false # true, false (default)
 words_per_minute         : 160
@@ -100,7 +100,7 @@ author:
   linkedin         : "luyu-yang-31a722a3/"
   orcid            : 
   pinterest        :
-  soundcloud       : "luyu-yang-942026816"
+  soundcloud       : #"luyu-yang-942026816"
   stackoverflow    : # http://stackoverflow.com/users/123456/username
   steam            :
   tumblr           :
