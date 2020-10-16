@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "Hello my friend!"
+title: "About Me"
 excerpt: "About me"
 author_profile: true
 redirect_from: 
@@ -8,23 +8,8 @@ redirect_from:
   - /about.html
 ---
 <br>
-About Loyo
+Hi, welcome to my website!
 <br>
+I am a third-year Ph.D. student at UMD PI, working with [Prof. Abhinav Shrivastava](http://www.cs.umd.edu/~abhinav/) and [Prof. Larry Davis](http://users.umiacs.umd.edu/~lsd/). My research interests lie in learning and reasoning, domain adaptation, mainly from the perspective of vision.
 <br>
-My name is Luyu Yang, many people call me Loyo.
-<br>
-I am a CVML nerd and fan of classical/digitized music.
-<br>
-Check out my new composition with Medly on SoundCloud [Rolling Beans](https://soundcloud.com/luyu-yang-942026816/rollin-beans).
-<br>
-<br>
-Currently I live in College Park, Maryland, working as a Ph.D. at University of Maryland under the supervision of the great [Professor Larry Davis](https://www.cs.umd.edu/people/lsdavis). My research interests are: Action/Interaction analysis in videos, Multi-view geometry and Image Forensics.
-<br>
-<br>
-Research makes me happy.
-<br>
-A message from you makes me happy as well.
-<br>
-:)
-<br>
-Please contact thru email.
+
