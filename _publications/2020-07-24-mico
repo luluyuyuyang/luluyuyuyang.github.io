@@ -2,9 +2,8 @@
 title: "MiCo: Mixup Co-Training for Semi-Supervised Domain Adaptation"
 collection: publications
 permalink: /publication/2020-07-24-mico
-excerpt: 'Co-training via task decomposition for semi-supervised domain adaptation.'
+excerpt: 'Co-training via task decomposition for semi-supervised domain adaptation. Under Review'
 date: 2020-07-24
-venue: 'underreview'
 paperurl: 'https://arxiv.org/pdf/2007.12684.pdf'
 
 ---
