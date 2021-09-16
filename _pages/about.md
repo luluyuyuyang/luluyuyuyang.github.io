@@ -15,10 +15,4 @@ I am a fourth-year Ph.D. student from University of Maryland Perception & Intell
 <br>
 <br>
 *New! Our paper on DeCoTa on Semi-supervised Domain Adaptation is accepted by ICCV 2021. Someone made a [video](https://www.youtube.com/watch?v=1RJQGTOPeBU) for it, thanks!*
-<br>
-<br>
-<br>
-Deep Co-training with Task Decomposition for Semi-supervised Domain Adaptation
-<br>
-<img src="/overall_framework.png" alt="overall_framework" width="400"/>
 
