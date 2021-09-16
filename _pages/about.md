@@ -10,6 +10,6 @@ redirect_from:
 <br>
 Hi, welcome to my website!
 <br>
-I am a third-year Ph.D. student from University of Maryland Perception & Intelligence, working with [Prof. Abhinav Shrivastava](http://www.cs.umd.edu/~abhinav/) and [Prof. Larry Davis](http://users.umiacs.umd.edu/~lsd/). My research interests lie in learning and reasoning, domain adaptation, mainly from the perspective of vision.
+I am a fourth-year Ph.D. student from University of Maryland Perception & Intelligence Lab, working with [Prof. Abhinav Shrivastava](http://www.cs.umd.edu/~abhinav/) and [Prof. Larry Davis](http://users.umiacs.umd.edu/~lsd/). My research interests lie in domain adaptation and robustness learning, mainly from the perspective of vision.
 <br>
 
