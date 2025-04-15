@@ -10,9 +10,9 @@ redirect_from:
 <br>
 Hi, welcome to my website!
 <br>
-I am a fourth-year Ph.D. student from University of Maryland Perception & Intelligence Lab, working with [Prof. Abhinav Shrivastava](http://www.cs.umd.edu/~abhinav/) and [Prof. Larry Davis](http://users.umiacs.umd.edu/~lsd/). My research interests lie in domain adaptation and robustness learning, mainly from the perspective of vision.
+I specialize in GenAI foundation models with 2+ years of experience developing generative models that manipulate real-world scenes based on human instructions. My work leverages large-scale industry datasets to create cutting-edge solutions in both image/video generation/editing and multi-modal perception models, with applications including autonomous driving. During my PhD research, I focused on multi-domain model adaptation, designing systems that effectively handle cross-domain variations while minimizing the need for human supervision.
 <br>
 <br>
 <br>
-*New! Our paper on DeCoTa on Semi-supervised Domain Adaptation is accepted by ICCV 2021. Someone made a [video](https://www.youtube.com/watch?v=1RJQGTOPeBU) for it, thanks!*
+*New! My most recent [work](https://arxiv.org/pdf/2406.10722) on multi-modal video generation.*
 
