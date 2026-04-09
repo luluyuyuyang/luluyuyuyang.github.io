@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luyu Yang</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #F8F6F1;
+    --bg-card: #FDFCF9;
+    --ink: #1A1815;
+    --ink-mid: #5A5650;
+    --ink-light: #9A9590;
+    --accent: #2D5A3D;
+    --accent-light: #E8F0EA;
+    --rule: #E0DDD5;
+    --serif: 'DM Serif Display', Georgia, serif;
+    --sans: 'Instrument Sans', system-ui, sans-serif;
+    --mono: 'DM Mono', monospace;
+  }
+
+  html { font-size: 16px; scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--ink); font-family: var(--sans); line-height: 1.65; min-height: 100vh; }
+  .outer { max-width: 860px; margin: 0 auto; padding: 0 2rem; }
+
+  nav { position: sticky; top: 0; z-index: 10; background: rgba(248,246,241,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--rule); padding: 0.75rem 0; }
+  .nav-inner { display: flex; gap: 2rem; font-size: 0.82rem; font-family: var(--mono); letter-spacing: 0.04em; text-transform: uppercase; }
+  .nav-inner a { color: var(--ink-mid); text-decoration: none; transition: color 0.15s; }
+  .nav-inner a:hover { color: var(--accent); }
+
+  header { padding: 5rem 0 4rem; border-bottom: 1px solid var(--rule); }
+  .header-inner { display: grid; grid-template-columns: 1fr auto; gap: 3rem; align-items: stretch; }
+  .name { font-family: var(--serif); font-size: clamp(2.4rem, 5vw, 3.6rem); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 1rem; }
+  .tagline { font-size: 1rem; color: var(--ink-mid); max-width: 480px; line-height: 1.7; margin-bottom: 1.4rem; }
+  .tagline em { font-style: italic; font-family: var(--serif); color: var(--accent); font-size: 1.05em; }
+  .contact-row { display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.85rem; font-family: var(--mono); color: var(--ink-mid); }
+  .contact-row a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.15s; }
+  .contact-row a:hover { border-color: var(--accent); }
+  .contact-row .sep { color: var(--rule); }
+  .avatar-wrap { width: 300px; height: 100%; min-height: 220px; border-radius: 8px; overflow: hidden; border: 1px solid var(--rule); flex-shrink: 0; }
+  .avatar-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+
+  section { padding: 3.5rem 0; border-bottom: 1px solid var(--rule); }
+  section:last-child { border-bottom: none; }
+  .section-label { font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-light); margin-bottom: 1.8rem; }
+
+  .news-list { list-style: none; }
+  .news-list li { display: grid; grid-template-columns: 80px 1fr; gap: 0 1.5rem; padding: 0.65rem 0; border-bottom: 1px solid var(--rule); font-size: 0.92rem; align-items: baseline; }
+  .news-list li:last-child { border-bottom: none; }
+  .news-date { font-family: var(--mono); font-size: 0.78rem; color: var(--ink-light); white-space: nowrap; }
+  .news-text { color: var(--ink-mid); }
+  .news-text strong { color: var(--ink); font-weight: 500; }
+  .news-text a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-light); }
+  .news-text a:hover { border-color: var(--accent); }
+
+  .bio-text { font-size: 1rem; color: var(--ink-mid); line-height: 1.8; max-width: 640px; }
+  .bio-text p + p { margin-top: 1rem; }
+  .bio-text a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-light); }
+  .bio-text a:hover { border-color: var(--accent); }
+
+  .paper-list { display: flex; flex-direction: column; }
+  .paper-item { display: grid; grid-template-columns: 56px 1fr; gap: 0 1.5rem; padding: 1.5rem 0; border-bottom: 1px solid var(--rule); align-items: start; }
+  .paper-item:last-child { border-bottom: none; }
+  .paper-year { font-family: var(--mono); font-size: 0.75rem; color: var(--ink-light); padding-top: 0.2rem; }
+  .paper-title { font-size: 0.97rem; font-weight: 500; color: var(--ink); line-height: 1.4; margin-bottom: 0.3rem; }
+  .paper-title a { color: inherit; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.15s; }
+  .paper-title a:hover { border-color: var(--ink); }
+  .paper-venue { font-size: 0.82rem; font-family: var(--mono); color: var(--accent); margin-bottom: 0.4rem; }
+  .paper-authors { font-size: 0.83rem; color: var(--ink-light); margin-bottom: 0.6rem; line-height: 1.5; }
+  .paper-authors strong { color: var(--ink-mid); font-weight: 500; }
+  .paper-links { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+
+  .pill { display: inline-block; font-family: var(--mono); font-size: 0.72rem; padding: 0.2rem 0.55rem; border-radius: 2px; border: 1px solid var(--rule); color: var(--ink-mid); text-decoration: none; cursor: pointer; background: none; transition: background 0.15s, color 0.15s; letter-spacing: 0.02em; }
+  .pill:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .pill.featured { background: var(--accent-light); color: var(--accent); border-color: var(--accent-light); }
+  .pill.featured:hover { background: var(--accent); color: #fff; }
+
+  .paper-item.featured-paper { background: var(--bg-card); border-radius: 8px; border: 1px solid var(--rule); padding: 1.5rem; margin-bottom: 0.5rem; grid-template-columns: auto 1fr; }
+  .featured-badge { display: inline-block; font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; background: var(--accent); color: #fff; padding: 0.15rem 0.5rem; border-radius: 2px; margin-bottom: 0.6rem; }
+
+  .community-links { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: flex-start; margin-top: 0.8rem; }
+  .wechat-wrap { position: relative; }
+  .wechat-popup { display: none; position: absolute; bottom: calc(100% + 8px); left: 0; z-index: 20; background: white; border: 1px solid var(--rule); border-radius: 8px; padding: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); text-align: center; white-space: nowrap; }
+  .wechat-popup img { width: 130px; height: 130px; display: block; margin-bottom: 6px; }
+  .wechat-popup span { font-size: 0.72rem; color: var(--ink-light); font-family: var(--mono); }
+
+  .exp-list { display: flex; flex-direction: column; }
+  .exp-item { display: grid; grid-template-columns: 100px 1fr; gap: 0 1.5rem; padding: 1.1rem 0; border-bottom: 1px solid var(--rule); align-items: baseline; font-size: 0.9rem; }
+  .exp-item:last-child { border-bottom: none; }
+  .exp-period { font-family: var(--mono); font-size: 0.75rem; color: var(--ink-light); }
+  .exp-role { font-weight: 500; color: var(--ink); }
+  .exp-org { color: var(--ink-mid); }
+
+  footer { padding: 2.5rem 0; font-family: var(--mono); font-size: 0.75rem; color: var(--ink-light); }
+
+  @media (max-width: 600px) {
+    .header-inner { grid-template-columns: 1fr; }
+    .avatar-wrap { width: 80px; height: 80px; order: -1; }
+    .paper-item { grid-template-columns: 1fr; }
+    .paper-year { display: none; }
+    .exp-item { grid-template-columns: 1fr; }
+    .exp-period { margin-bottom: 0.2rem; }
+    .news-list li { grid-template-columns: 1fr; }
+    .news-date { margin-bottom: 0.1rem; }
+  }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+  .fade-up { animation: fadeUp 0.5s ease both; }
+  .fade-up:nth-child(2) { animation-delay: 0.08s; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="outer">
+    <div class="nav-inner">
+      <a href="#about">About</a>
+      <a href="#news">News</a>
+      <a href="#research">Research</a>
+      <a href="#experience">Experience</a>
+    </div>
+  </div>
+</nav>
+
+<div class="outer">
+
+  <header id="about">
+    <div class="header-inner">
+      <div class="fade-up">
+        <h1 class="name">Luyu Yang</h1>
+        <p class="tagline">
+          Senior Research Scientist at <strong>Salesforce AI Research</strong>.<br>
+          I work on <em>AI that understands and builds the physical world</em> —
+          vision-language models, multimodal reasoning, and the gap between pixels and physical reality.
+        </p>
+        <div class="contact-row">
+          <span>yangluyu123 [at] gmail [dot] com</span>
+          <a href="https://scholar.google.com/citations?user=n0nlmhoAAAAJ&hl=en" target="_blank">Google Scholar</a>
+          <a href="https://www.linkedin.com/in/luyu-yang-31a722a3/" target="_blank">LinkedIn</a>
+        </div>
+      </div>
+      <div class="avatar-wrap fade-up">
+        <img src="flw_ennis.png" alt="Ennis House architectural drawing by Frank Lloyd Wright">
+      </div>
+    </div>
+  </header>
+
+  <section id="news">
+    <p class="section-label">News</p>
+    <ul class="news-list">
+      <li>
+        <span class="news-date">Apr 2026</span>
+        <span class="news-text">
+          <strong>DreamHouse</strong> is released.
+          <a href="https://luluyuyuyang.github.io/dreamhouse/" target="_blank">Project page →</a>
+        </span>
+      </li>
+
+    </ul>
+  </section>
+
+  <section id="about-extended">
+    <p class="section-label">About</p>
+    <div class="bio-text">
+      <p>
+        I am a Senior Research Scientist at <a href="https://www.salesforceairesearch.com/" target="_blank">Salesforce AI Research</a>.
+        I care about AI systems that reason about physical reality — not just recognizing objects in images,
+        but understanding structural validity, spatial constraints, and how things are actually built.
+      </p>
+      <p>
+        I did my PhD at the <a href="https://www.umd.edu/" target="_blank">University of Maryland, College Park</a>,
+        advised by <a href="http://www.cs.umd.edu/~abhinav/" target="_blank">Prof. Abhinav Shrivastava</a>
+        and <a href="https://lsd.umiacs.io/" target="_blank">Prof. Larry Davis</a>,
+        working on domain adaptation and model robustness.
+      </p>
+    </div>
+  </section>
+
+  <section id="research">
+    <p class="section-label">Research</p>
+    <div class="paper-list">
+
+      <div class="paper-item featured-paper">
+        <div style="padding-top:0.15rem;margin-right:1.5rem;">
+          <span class="paper-year" style="padding-top:0;">2026</span>
+        </div>
+        <div>
+          <span class="featured-badge">New</span>
+          <p class="paper-title">
+            <a href="https://luluyuyuyang.github.io/dreamhouse/" target="_blank">
+              DreamHouse: How Far Are Vision-Language Models from Constructing the Real World?
+            </a>
+          </p>
+          <p class="paper-venue">2026</p>
+          <p class="paper-authors"><strong>Luyu Yang</strong>, Yutong Dai, An Yan, Viraj Prabhu, Ran Xu, Zeyuan Chen</p>
+          <p style="font-size:0.84rem;color:var(--ink-mid);margin-bottom:0.5rem;line-height:1.65;">
+            A benchmark for physical generative reasoning using residential timber-frame construction.
+            26,000+ verified structures, a 10-test structural validation suite, and three evaluation protocols
+            spanning frontier VLMs (GPT-5, Claude 4.5 Opus, Gemini 3 Flash, Qwen).
+          </p>
+          <div class="paper-links">
+            <a href="https://luluyuyuyang.github.io/dreamhouse/" class="pill featured" target="_blank">Project page</a>
+          </div>
+          <div class="community-links">
+            <a href="https://discord.gg/f3yebJFx" class="pill" target="_blank">Discord</a>
+            <div class="wechat-wrap">
+              <button class="pill" onclick="var p=document.getElementById('wqr');p.style.display=p.style.display==='block'?'none':'block'">WeChat QR</button>
+              <div class="wechat-popup" id="wqr">
+                <img src="https://luluyuyuyang.github.io/dreamhouse/assets/wechat_group_qr.jpeg" alt="WeChat QR code">
+                <span>Scan with WeChat</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="paper-item">
+        <span class="paper-year">2025</span>
+        <div>
+          <p class="paper-title">
+            <a href="https://ieeexplore.ieee.org/abstract/document/10943913" target="_blank">
+              CACE: Sim-to-Real Indoor 3D Semantic Segmentation via Context-Aware Augmentation and Consistency Enforcement
+            </a>
+          </p>
+          <p class="paper-venue">WACV 2025</p>
+          <p class="paper-authors">TY Chen, <strong>L Yang</strong>, TY Chuang, SH Lai</p>
+          <div class="paper-links">
+            <a href="https://ieeexplore.ieee.org/abstract/document/10943913" class="pill" target="_blank">IEEE</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="paper-item">
+        <span class="paper-year">2024</span>
+        <div>
+          <p class="paper-title">
+            <a href="https://arxiv.org/abs/2406.10722" target="_blank">
+              GenMM: Geometrically and Temporally Consistent Multimodal Data Generation for Video and LiDAR
+            </a>
+          </p>
+          <p class="paper-venue">arXiv 2024</p>
+          <p class="paper-authors">B Singh*, V Kulharia*, <strong>L Yang*</strong>, A Ravichandran, A Tyagi, A Shrivastava</p>
+          <p style="font-size:0.78rem;color:var(--ink-light);margin-top:-0.2rem;margin-bottom:0.5rem;">* equal contribution</p>
+          <div class="paper-links">
+            <a href="https://arxiv.org/abs/2406.10722" class="pill" target="_blank">arXiv</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="paper-item">
+        <span class="paper-year">2024</span>
+        <div>
+          <p class="paper-title">
+            <a href="https://arxiv.org/abs/2403.02818" target="_blank">
+              Are Dense Labels Always Necessary for 3D Object Detection from Point Cloud?
+            </a>
+          </p>
+          <p class="paper-venue">arXiv 2024</p>
+          <p class="paper-authors">C Gao, C Liu, J Shu, F Liu, J Liu, <strong>L Yang</strong>, X Gao, D Meng</p>
+          <div class="paper-links">
+            <a href="https://arxiv.org/abs/2403.02818" class="pill" target="_blank">arXiv</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="paper-item">
+        <span class="paper-year">2023</span>
+        <div>
+          <p class="paper-title">
+            <a href="https://www.cs.umd.edu/~yushen/docs/ICRA2023.pdf" target="_blank">
+              Small-shot Multi-modal Distillation for Vision-based Autonomous Steering
+            </a>
+          </p>
+          <p class="paper-venue">ICRA 2023</p>
+          <p class="paper-authors">Yu Shen, <strong>Luyu Yang</strong>, Xijun Wang, Ming C. Lin</p>
+          <div class="paper-links">
+            <a href="https://www.cs.umd.edu/~yushen/docs/ICRA2023.pdf" class="pill" target="_blank">PDF</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="paper-item">
+        <span class="paper-year">2022</span>
+        <div>
+          <p class="paper-title">
+            <a href="https://arxiv.org/pdf/2112.04345.pdf" target="_blank">
+              Burn After Reading: Online Adaptation for Cross-domain Streaming Data
+            </a>
+          </p>
+          <p class="paper-venue">ECCV 2022</p>
+          <p class="paper-authors"><strong>Luyu Yang</strong>, Mingfei Gao, Zeyuan Chen, Ran Xu, Abhinav Shrivastava, Chetan Ramaiah</p>
+          <div class="paper-links">
+            <a href="https://arxiv.org/pdf/2112.04345.pdf" class="pill" target="_blank">PDF</a>
+            <a href="https://github.com/salesforce/burn-after-reading" class="pill" target="_blank">Code</a>
+            <a href="https://www.loyo.me/projectpages/burnAfterReading/BurnAfterReading.html" class="pill" target="_blank">Project page</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="paper-item">
+        <span class="paper-year">2021</span>
+        <div>
+          <p class="paper-title">
+            <a href="https://openaccess.thecvf.com/content/ICCV2021/papers/Yang_Deep_Co-Training_With_Task_Decomposition_for_Semi-Supervised_Domain_Adaptation_ICCV_2021_paper.pdf" target="_blank">
+              Deep Co-Training with Task Decomposition for Semi-Supervised Domain Adaptation
+            </a>
+          </p>
+          <p class="paper-venue">ICCV 2021</p>
+          <p class="paper-authors"><strong>Luyu Yang</strong>, Yan Wang, Mingfei Gao, Abhinav Shrivastava, Kilian Q. Weinberger, Wei-Lun Chao, Ser-Nam Lim</p>
+          <div class="paper-links">
+            <a href="https://openaccess.thecvf.com/content/ICCV2021/papers/Yang_Deep_Co-Training_With_Task_Decomposition_for_Semi-Supervised_Domain_Adaptation_ICCV_2021_paper.pdf" class="pill" target="_blank">PDF</a>
+            <a href="https://github.com/LoyoYang/DeCoTa" class="pill" target="_blank">Code</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="paper-item">
+        <span class="paper-year">2020</span>
+        <div>
+          <p class="paper-title">
+            <a href="https://arxiv.org/abs/2007.01261" target="_blank">
+              Curriculum Manager for Source Selection in Multi-Source Domain Adaptation
+            </a>
+          </p>
+          <p class="paper-venue">ECCV 2020</p>
+          <p class="paper-authors"><strong>Luyu Yang</strong>, Yogesh Balaji, Ser-Nam Lim, Abhinav Shrivastava</p>
+          <div class="paper-links">
+            <a href="https://arxiv.org/abs/2007.01261" class="pill" target="_blank">PDF</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="paper-item">
+        <span class="paper-year">2018</span>
+        <div>
+          <p class="paper-title">
+            <a href="https://openaccess.thecvf.com/content_ECCV_2018/papers/Lan_Wang_PM-GANs_Discriminative_Representation_ECCV_2018_paper.pdf" target="_blank">
+              PM-GANs: Discriminative Representation Learning for Action Recognition Using Partial-modalities
+            </a>
+          </p>
+          <p class="paper-venue">ECCV 2018</p>
+          <p class="paper-authors">Lan Wang, Chenqiang Gao, <strong>Luyu Yang</strong>, Yue Zhao, Wangmeng Zuo, Deyu Meng</p>
+          <div class="paper-links">
+            <a href="https://openaccess.thecvf.com/content_ECCV_2018/papers/Lan_Wang_PM-GANs_Discriminative_Representation_ECCV_2018_paper.pdf" class="pill" target="_blank">PDF</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="experience">
+    <p class="section-label">Experience</p>
+    <div class="exp-list">
+      <div class="exp-item">
+        <span class="exp-period">2025 – present</span>
+        <div>
+          <span class="exp-role">Senior Research Scientist</span>
+          <span class="exp-org"> · <a href="https://www.salesforceairesearch.com/" target="_blank" style="color:var(--accent);text-decoration:none;">Salesforce AI Research</a></span>
+        </div>
+      </div>
+      <div class="exp-item">
+        <span class="exp-period">2022 – 2025</span>
+        <div>
+          <span class="exp-role">Senior Applied Scientist</span>
+          <span class="exp-org"> · Cruise</span>
+        </div>
+      </div>
+      <div class="exp-item">
+        <span class="exp-period">2018 – 2022</span>
+        <div>
+          <span class="exp-role">PhD, Computer Science</span>
+          <span class="exp-org"> · University of Maryland, College Park</span>
+        </div>
+      </div>
+      <div class="exp-item">
+        <span class="exp-period">Summer 2021</span>
+        <div>
+          <span class="exp-role">Research Intern</span>
+          <span class="exp-org"> · Salesforce Research</span>
+        </div>
+      </div>
+      <div class="exp-item">
+        <span class="exp-period">2020</span>
+        <div>
+          <span class="exp-role">Research Intern</span>
+          <span class="exp-org"> · Facebook AI</span>
+        </div
